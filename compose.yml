@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  my_app:
+    build: .
+    image: devops
+    ports:
+      - "3300:80"     
+    depends_on:
+      - db
+    restart: always
+    env_file:
+      - 'variables.env'
+    volumes:
+      - '.:/code'
+
+  mysql:
+    image: mariadb
+    restart: always
+    env_file:
+      - 'variables.env'
+
+
