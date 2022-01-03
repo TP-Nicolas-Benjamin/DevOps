@@ -21,8 +21,8 @@ $ docker-compose up
 
 - Image custom:  une application web en python (bottle) qui sur les routes suivantes :
     - / : liste tous les produits
-    - /insert/<name>/<price> : ajoute un nouveau produit avec les paramètres passés
-    - /<id> : affiche le produit avec l’id correspondant
+    - /insert/  \<name\>/\<price\> : ajoute un nouveau produit avec les paramètres passés
+    - /\<id\> : affiche le produit avec l’id correspondant
 - L’autre conteneur est une image **mariadb** qui va contenir les produits
 
 Pour K8s :
@@ -39,11 +39,11 @@ $ minikube service myapp-service
 
 Endpoint disponible : 
 
-/insert/<name>/<price> :  Insert new product in the database
+/insert/\<name\>/\<price\> :  Insert new product in the database
 
 ex : [http://192.168.49.2:30000/insert/productOne/85](http://192.168.49.2:30000/insert/productOne/85)
 
-/<id> : Get the product with the corresponding id
+/\<id\> : Get the product with the corresponding id
 
 ex : [http://192.168.49.2:30000/6](http://192.168.49.2:30000/6)
 
